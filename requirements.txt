@@ -1,5 +1,5 @@
 torch
 pandas
 scikit-learn
-seaborn
 matplotlib
+seaborn
