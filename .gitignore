@@ -1,0 +1,21 @@
+# Model files
+models/
+*.pth
+*.pt
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Logs and temp
+*.log
+*.tmp
+
+# Environment folders
+.env/
+venv/
+
+# OS and IDE files
+.DS_Store
+.vscode/
+.idea/

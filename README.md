@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dataset
 
 
@@ -91,3 +92,17 @@ For open source projects, say how it is licensed.
 
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+=======
+# Iris Classification using PyTorch and Docker
+
+## Overview
+
+This project demonstrates how to train and deploy a deep learning model for Iris classification using PyTorch inside Docker containers. 
+
+## Project Structure
+
+## How to Run
+
+### Build Docker Images
+
+>>>>>>> origin/master
