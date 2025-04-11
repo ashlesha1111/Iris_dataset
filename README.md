@@ -5,42 +5,32 @@ This project demonstrates the process of building, training, and deploying a dee
 
 ---
 
-## What Has Been Done
 Iris_dataset/
 │
-├── data/
-
-│   ├── iris_train.csv             # Preprocessed training data
-│   └── iris_inference.csv         # Preprocessed inference data
+├── data/                            # Preprocessed dataset files
+│   ├── iris_train.csv              # Preprocessed training data
+│   └── iris_inference.csv          # Preprocessed inference data
 │
-
-├── training/
-
-│   ├── Dockerfile                 # Dockerfile for training
-│   ├── train.py                   # PyTorch training script
-│   ├── model.pth                  # Trained model output
-│   └── requirements.txt           # Python packages for training
-
+├── training/                        # Training pipeline
+│   ├── Dockerfile                  # Dockerfile for training
+│   ├── train.py                    # PyTorch training script
+│   ├── model.pth                   # Saved trained model
+│   └── requirements.txt           # Python dependencies for training
 │
-├── inference/
-
-│   ├── Dockerfile                 # Dockerfile for inference
-│   ├── inference.py               # Batch inference script
-│   └── requirements.txt           # Python packages for inference
+├── inference/                       # Inference pipeline
+│   ├── Dockerfile                  # Dockerfile for inference
+│   ├── inference.py                # Batch inference script using the trained model
+│   └── requirements.txt           # Python dependencies for inference
 │
-
-├── scripts/
-
-│   └── preprocess.py              # Data download and split script
+├── scripts/                         # Utility scripts
+│   └── preprocess.py              # Script for downloading and preprocessing the dataset
 │
-
-├── tests/
-
-│   ├── test_training.py           # Unit tests for training
-│   └── test_inference.py          # Unit tests for inference
+├── tests/                           # Unit tests for training and inference
+│   ├── test_training.py           # Unit tests for training pipeline
+│   └── test_inference.py          # Unit tests for inference pipeline
 │
-├── .gitignore                     # Ignore model files, logs, etc.
-└── README.md  
+├── .gitignore                       # Git ignore file (e.g., ignores models, logs)
+└── README.md                        # Project documentation
 
 # This documentation
 #git clone https://github.com/yourusername/Iris_dataset.git
