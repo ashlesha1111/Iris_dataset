@@ -7,26 +7,32 @@ This project demonstrates the process of building, training, and deploying a dee
 
 ## What Has Been Done
 Iris_dataset/
+
 │
 ├── data/
+
 │   ├── iris_train.csv             # Preprocessed training data
 │   └── iris_inference.csv         # Preprocessed inference data
 │
 ├── training/
+
 │   ├── Dockerfile                 # Dockerfile for training
 │   ├── train.py                   # PyTorch training script
 │   ├── model.pth                  # Trained model output
 │   └── requirements.txt           # Python packages for training
 │
 ├── inference/
+
 │   ├── Dockerfile                 # Dockerfile for inference
 │   ├── inference.py               # Batch inference script
 │   └── requirements.txt           # Python packages for inference
 │
 ├── scripts/
+
 │   └── preprocess.py              # Data download and split script
 │
 ├── tests/
+
 │   ├── test_training.py           # Unit tests for training
 │   └── test_inference.py          # Unit tests for inference
 │
