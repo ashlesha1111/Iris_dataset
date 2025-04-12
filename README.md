@@ -3,6 +3,22 @@
 
 This project demonstrates the process of building, training, and deploying a deep learning model for Iris flower classification using PyTorch inside Docker containers. The goal is to showcase the end-to-end pipeline from data preprocessing to model inference, all encapsulated within Docker for reproducibility and modularity.
 
+Iris Flower Classification – Deep Learning with Docker is an end-to-end machine learning pipeline that:
+
+Downloads and preprocesses the classic Iris dataset.
+
+Trains a deep learning model using PyTorch to classify flower species based on petal and sepal measurements.
+
+Saves the trained model (model.pth) for reuse.
+
+Performs batch inference on unseen data using the saved model.
+
+Runs the entire workflow in Docker containers, ensuring full environment isolation and reproducibility.
+
+Includes unit tests for both training and inference to ensure correctness and robustness.
+
+This project is ideal for demonstrating how to build, containerize, and deploy a machine learning solution with PyTorch + Docker — from data to predictions.
+
 ---
 
 Iris_dataset/
@@ -32,116 +48,61 @@ Iris_dataset/
 ├── .gitignore                       # Git ignore file (e.g., ignores models, logs)
 └── README.md                        # Project documentation
 
+# Step 1: Clone the Repository
+git clone https://github.com/yourusername/Iris_dataset.git
+cd Iris_dataset
+
+# Step 2: Preprocess the Dataset
+python scripts/preprocess.py
+
+# Step 3: Build Docker Image for Training
+docker build -f training/Dockerfile -t iris-train .
+
+# Step 4: Run Docker Container for Training
+docker run --rm `
+  -v "C:\Users\ashlesha_saxena\Iris_dataset\data:/app/data" `
+  -v "C:\Users\ashlesha_saxena\Iris_dataset\training:/app/training" `
+  iris-train
+
+# Step 5: Build Docker Image for Inference
+docker build -f inference/Dockerfile -t iris-infer .
+
+# Step 6: Run Docker Container for Inference
+docker run --rm ^
+  -v "C:\Users\ashlesha_saxena\Iris_dataset\data:/app/data" ^
+  -v "C:\Users\ashlesha_saxena\Iris_dataset\training:/app/training" ^
+  iris-infer
+
+# Step 7 (Optional): Run Unit Tests
+pytest tests/test_training.py
+pytest tests/test_inference.py
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+
+cm = confusion_matrix(true_labels, predicted_labels)
+ConfusionMatrixDisplay(cm, display_labels=['Setosa', 'Versicolor', 'Virginica']).plot()
+# Shared across training/requirements.txt and inference/requirements.txt:
+torch
+pandas
+scikit-learn
+numpy
+pytest   # Optional, for unit testing
+# Features Summary
+ Fully Dockerized Training & Inference Pipelines
+
+ Clean Data Preprocessing
+
+ Simple and Effective Neural Network
+
+ Batch Inference with Saved Model
+
+ Unit Testing for Robustness
+
+ Reproducible and Portable Setup
+
 # This documentation
-#git clone https://github.com/yourusername/Iris_dataset.git
+#git clone https://github.com/ashlesha_saxena@epam.com/Iris_dataset.git
 #cd Iris_dataset
 #python scripts/preprocess.py
 
-
----
-
-##  What Has Been Done
-
-### 1.  Data Downloading & Preprocessing
-- **Dataset**: The Iris dataset from [Wikipedia](https://en.wikipedia.org/wiki/Iris_flower_data_set).
-- **Steps**:
-  - Download and load dataset.
-  - Clean and format into structured CSV.
-  - Split into:
-    - `iris_train.csv` – for training the model.
-    - `iris_inference.csv` – for performing inference.
-- Script: `scripts/preprocess.py`
-
-### 2.  Model Training with PyTorch (Dockerized)
-- A simple feedforward neural network using PyTorch.
-- Trained on `iris_train.csv`.
-- Saves the trained model as `model.pth`.
-- Fully Dockerized for environment isolation.
-
-### 3.  Batch Inference (Dockerized)
-- Loads the trained model (`model.pth`).
-- Performs inference on `iris_inference.csv`.
-- Output is printed or optionally saved.
-- Also containerized for modular, reproducible execution.
-
-### 4. Unit Testing & Error Handling
-- Unit tests included:
-  - `test_training.py` for verifying training pipeline.
-  - `test_inference.py` for validating inference logic.
-- Exception handling for robustness.
-- Inline comments for clarity and maintainability.
-
----
-
-##  Dockerized Workflow
-#commands :
-### Step 1: Clone the Repository
-```bash
-git clone https://github.com/yourusername/Iris_dataset.git
-cd Iris_dataset
-# ----------------------------------------------
-# Clone the GitHub Repository
-# ----------------------------------------------
-git clone https://github.com/yourusername/Iris_dataset.git
-cd Iris_dataset
-
-# ----------------------------------------------
- #  Step 1: Preprocess the Iris dataset
-# This script downloads, cleans, and splits the dataset
-# ----------------------------------------------
-python scripts/preprocess.py
-
-# ----------------------------------------------
-# Step 2: Build Docker Image for Model Training
-# This image contains PyTorch and training dependencies
-# ----------------------------------------------
-docker build -f training/Dockerfile -t iris-train .
-
-# ----------------------------------------------
-# Step 3: Run Docker Container for Training
-# It will read iris_train.csv, train the model, and save model.pth
-# ----------------------------------------------
-docker run --rm \
-  -v ${PWD}/data:/app/data \                # Mount data directory
-  -v ${PWD}/training:/app/training \        # Mount training directory (for saving model)
-  iris-train                                # Docker image name
-
-# ----------------------------------------------
-# Step 4: Build Docker Image for Inference
-# This image loads the trained model and runs batch inference
-# ----------------------------------------------
-docker build -f inference/Dockerfile -t iris-infer .
-
-# ----------------------------------------------
-# Step 5: Run Docker Container for Inference
-# It will read iris_inference.csv and output predictions
-# ----------------------------------------------
-docker run --rm \ using file path in place of PWD
-  -v ${PWD}/data:/app/data \                # Mount data directory
-  -v ${PWD}/training:/app/training \        # Mount model directory (model.pth)
-  iris-infer                                 # Docker image name
-
-# ----------------------------------------------
-# Step 6 (Optional): Run Unit Tests
-# Tests model training and inference using pytest
-# ----------------------------------------------
-pytest tests/test_training.py
-pytest tests/test_inference.py
-# requirements.txt (same for training & inference for simplicity)
-torch              # PyTorch
-pandas             # Data manipulation
-scikit-learn       # For accuracy, train-test split, preprocessing
-numpy              # Numerical operations
-
-# Optional: for unit testing
-pytest
-#pytest tests/test_training.py
-#pytest tests/test_inference.py
-
-Step : Model Evaluation – Confusion Matrix
-You can add a section like this under your evaluation or results section in the README.md
---------------------------------------------------------------------------------------------------
-
-
-
-
+!["C:\Users\ashlesha_saxena\Iris_dataset\data\confusion_matrix.png"](image-3.png)
+!["C:\Users\ashlesha_saxena\Iris_dataset\data\inference_output.csv"](image-4.png)
