@@ -121,17 +121,8 @@ pytest   # Optional, for unit testing
  Clean Data Preprocessing
 
  Simple and Effective Neural Network
-
  Batch Inference with Saved Model
-
  Unit Testing for Robustness
-
  Reproducible and Portable Setup
 
-# This documentation
-#git clone https://github.com/ashlesha_saxena@epam.com/Iris_dataset.git
-#cd Iris_dataset
-#python scripts/preprocess.py
 
-!["C:\Users\ashlesha_saxena\Iris_dataset\data\confusion_matrix.png"](image-3.png)
-!["C:\Users\ashlesha_saxena\Iris_dataset\data\inference_output.csv"](image-4.png)
