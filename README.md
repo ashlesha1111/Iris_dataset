@@ -92,11 +92,14 @@ docker run --rm `
 
 # Step 5: Build Docker Image for Inference
 docker build -f inference/Dockerfile -t iris-infer .
+creates an isolated image that includes all required packages for running inference (PyTorch, pandas, etc.).
+Packages  inference.py script into a self-contained Docker image named iris-infer.
+
 
 # Step 6: Run Docker Container for Inference
-docker run --rm ^
-  -v "C:\Users\ashlesha_saxena\Iris_dataset\data:/app/data" ^
-  -v "C:\Users\ashlesha_saxena\Iris_dataset\training:/app/training" ^
+docker run --rm `
+  -v "C:\Users\ashlesha_saxena\Iris_dataset\data:/app/data" `
+  -v "C:\Users\ashlesha_saxena\Iris_dataset\training:/app/training" `
   iris-infer
 
 # Step 7 (Optional): Run Unit Tests
