@@ -54,9 +54,35 @@ cd Iris_dataset
 
 # Step 2: Preprocess the Dataset
 python scripts/preprocess.py
+Download the Dataset
+
+Loads the Iris dataset using scikit-learn's built-in loader.
+
+Convert to DataFrame
+
+Transforms the dataset into a structured pandas DataFrame for easier manipulation.
+
+Clean and Format
+
+Assigns appropriate column names: sepal length, sepal width, petal length, petal width, and target (species).
+
+Maps target integers to species names (setosa, versicolor, virginica).
+
+Shuffle the Data
+
+Randomly shuffles the dataset to ensure a good mix during training and inference.
+
+Split into Two Sets
+
+Training Set: 80% of the data saved as iris_train.csv.
 
 # Step 3: Build Docker Image for Training
 docker build -f training/Dockerfile -t iris-train .
+The purpose of this step is to create a portable, isolated environment that can run the training script (train.py) with all necessary dependencies using Docker.
+Environment Reproducibility
+Allows the model training process to be easily repeated, shared, and deployed — all through a simple Docker command.
+Part of a Modular ML Pipeline
+Keeps training logic separated from data preprocessing and inference, promoting a clean, maintainable pipeline.
 
 # Step 4: Run Docker Container for Training
 docker run --rm `
