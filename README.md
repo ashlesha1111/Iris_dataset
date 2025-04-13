@@ -83,7 +83,7 @@ pytest   # Optional, for unit testing
  Reproducible and Portable Setup
 
 # This documentation
-#git clone https://github.com/yourusername/Iris_dataset.git
+#git clone https://github.com/ashlesha1111/Iris_dataset.git
 #cd Iris_dataset
 #python scripts/preprocess.py
 
