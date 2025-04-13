@@ -57,9 +57,9 @@ docker run --rm `
 docker build -f inference/Dockerfile -t iris-infer .
 
 # Step 6: Run Docker Container for Inference
-docker run --rm ^
-  -v "C:\Users\ashlesha_saxena\Iris_dataset\data:/app/data" ^
-  -v "C:\Users\ashlesha_saxena\Iris_dataset\training:/app/training" ^
+docker run --rm `
+  -v "C:\Users\ashlesha_saxena\Iris_dataset\data:/app/data" `
+  -v "C:\Users\ashlesha_saxena\Iris_dataset\training:/app/training" `
   iris-infer
 
 # Step 7 (Optional): Run Unit Tests
@@ -93,5 +93,5 @@ pytest   # Optional, for unit testing
 #cd Iris_dataset
 #python scripts/preprocess.py
 
-!["C:\Users\ashlesha_saxena\Iris_dataset\data\confusion_matrix.png"](image-3.png)
-!["C:\Users\ashlesha_saxena\Iris_dataset\data\inference_output.csv"](image-4.png)
+![https://imgur.com/a/2ggqtOh](image-3.png)
+![https://imgur.com/Cx5jP76](image-4.png)
