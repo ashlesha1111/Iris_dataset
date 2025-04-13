@@ -51,12 +51,12 @@ mle-practice/
 
 ### **Build the Docker Image for Training**
 ```bash
-docker build -f Dockerfile-training -t mlepractice:training .
+docker build -f Dockerfile-training -t Iris_dataset:training .
 ```
 
 ### **Run the Training Container**
 ```bash
-docker run --rm -v $(pwd)/training/model:/app/model -v $(pwd)/data:/app/data mlepractice:training
+docker run --rm -v $(pwd)/training/model:/app/model -v $(pwd)/data:/app/data Iris_dataset:training
 ```
 
 The trained model will be saved in the `training/model/` directory as `model.pth`.
@@ -69,7 +69,7 @@ The trained model will be saved in the `training/model/` directory as `model.pth
 
 ### **Build the Docker Image for Inference**
 ```bash
-docker build -f Dockerfile-inference -t iris_dataset:inference .
+docker build -f Dockerfile-inference -t Iris_dataset:inference .
 ```
 
 ### **Run the Inference Container**
@@ -89,7 +89,7 @@ Unit tests ensure the integrity of the training and inference pipelines.
 ```bash
 python tests/testing.py
 ```
-![test output 2](assets/test output 2.png)
+
 
 ---
 
