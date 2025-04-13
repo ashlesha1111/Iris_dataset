@@ -32,7 +32,7 @@ Iris_dataset/
 
 
 # Step 1: Clone the Repository
-git clone https://github.com/yourusername/Iris_dataset.git
+git clone https://github.com/ashlesha1111/Iris_dataset.git
 cd Iris_dataset
 
 # Step 2: Preprocess the Dataset
