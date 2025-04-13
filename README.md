@@ -5,6 +5,15 @@ This project demonstrates the process of building, training, and deploying a dee
 
 ---
 
+# Iris Flower Classification - Deep Learning with Docker
+
+This project demonstrates the complete deep learning workflow for classifying Iris flower species using PyTorch, fully containerized with Docker for modularity and reproducibility.
+
+---
+
+## Project Structure
+
+```plaintext
 Iris_dataset/
 ├── data/                # Preprocessed dataset files
 │   ├── iris_train.csv
@@ -25,6 +34,7 @@ Iris_dataset/
 │   └── test_inference.py
 ├── .gitignore
 └── README.md
+
 
 
 # Step 1: Clone the Repository
