@@ -6,31 +6,26 @@ This project demonstrates the process of building, training, and deploying a dee
 ---
 
 Iris_dataset/
-│
-├── data/                            # Preprocessed dataset files
-│   ├── iris_train.csv              # Preprocessed training data
-│   └── iris_inference.csv          # Preprocessed inference data
-│
-├── training/                        # Training pipeline
-│   ├── Dockerfile                  # Dockerfile for training
-│   ├── train.py                    # PyTorch training script
-│   ├── model.pth                   # Saved trained model
-│   └── requirements.txt           # Python dependencies for training
-│
-├── inference/                       # Inference pipeline
-│   ├── Dockerfile                  # Dockerfile for inference
-│   ├── inference.py                # Batch inference script using the trained model
-│   └── requirements.txt           # Python dependencies for inference
-│
-├── scripts/                         # Utility scripts
-│   └── preprocess.py              # Script for downloading and preprocessing the dataset
-│
-├── tests/                           # Unit tests for training and inference
-│   ├── test_training.py           # Unit tests for training pipeline
-│   └── test_inference.py          # Unit tests for inference pipeline
-│
-├── .gitignore                       # Git ignore file (e.g., ignores models, logs)
-└── README.md                        # Project documentation
+├── data/                # Preprocessed dataset files
+│   ├── iris_train.csv
+│   └── iris_inference.csv
+├── training/            # Training pipeline
+│   ├── Dockerfile
+│   ├── train.py
+│   ├── model.pth
+│   └── requirements.txt
+├── inference/           # Inference pipeline
+│   ├── Dockerfile
+│   ├── inference.py
+│   └── requirements.txt
+├── scripts/             # Utility scripts
+│   └── preprocess.py
+├── tests/               # Unit tests
+│   ├── test_training.py
+│   └── test_inference.py
+├── .gitignore
+└── README.md
+
 
 # Step 1: Clone the Repository
 git clone https://github.com/yourusername/Iris_dataset.git
