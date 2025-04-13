@@ -87,5 +87,5 @@ pytest   # Optional, for unit testing
 #cd Iris_dataset
 #python scripts/preprocess.py
 
-![https://imgur.com/a/2ggqtOh](image-3.png)
-![https://imgur.com/Cx5jP76](image-4.png)
+![output](https://i.imgur.com/lw8wKrM.jpeg) 
+![confusion matrix](https://i.imgur.com/Cx5jP76.jpeg) 
