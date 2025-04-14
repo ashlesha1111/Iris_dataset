@@ -87,7 +87,7 @@ pytest   # Optional, for unit testing
 #git clone https://github.com/yourusername/Iris_dataset.git
 #cd Iris_dataset
 #python scripts/preprocess.py
-
+# output images
 ![confusion_matrix](images/confusion_matrix.png)
 ![image-4](images/image-4.png)
 ![image-3](images/image-3.png)
