@@ -87,8 +87,4 @@ pytest   # Optional, for unit testing
 #cd Iris_dataset
 #python scripts/preprocess.py
 
-![image-4](https://github.com/user-attachments/assets/2b8f784c-3947-403d-8c72-a90fd9d080a5)
-
-![image-3](https://github.com/user-attachments/assets/c6d8c314-7c5b-4cf0-b762-4e31005ca826)
-
-
+![image-3](https://github.com/ashlesha1111/Iris_dataset/blob/main/data/confusion_matrix.png)
