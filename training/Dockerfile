@@ -1,17 +1,14 @@
-# Use an official Python image with PyTorch
-FROM pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime
+# training/Dockerfile
+FROM python:3.10.11
 
-# Set working directory
 WORKDIR /app
 
-# Copy necessary files
-COPY requirements.txt ./
-COPY training/train.py ./train.py
-COPY data/ ./data/
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install dependencies
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+COPY training/train.py .
+COPY data /app/data
 
-# Run training
+RUN mkdir -p /app/models
+
 CMD ["python", "train.py"]
